@@ -21,4 +21,6 @@ public interface UserService extends Remote{
     public List<User> getAllUsers() throws RemoteException;
     public User getUserById(User user) throws RemoteException;
     public User login(User user) throws RemoteException;
+    public String verifyOtp(User user, String enteredOtp) throws RemoteException;
+    public String resendOtp(User user) throws RemoteException;
 }

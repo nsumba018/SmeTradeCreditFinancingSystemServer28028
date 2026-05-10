@@ -54,5 +54,15 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService{
     public User login(User user) throws RemoteException {
         return dao.login(user); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String verifyOtp(User user, String enteredOtp) throws RemoteException {
+        return dao.verifyOtp(user, enteredOtp); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String resendOtp(User user) throws RemoteException {
+        return dao.resendOtp(user); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
