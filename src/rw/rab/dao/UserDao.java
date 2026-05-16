@@ -55,7 +55,7 @@ public class UserDao {
     public User login(User user){
         Session ss = HibernateUtil.getSessionFactory().openSession();
         User result = (User)ss.createQuery("select u from User u where u.username= :uname and u.password = :pwd")
-        .setParameter("unmae", user.getUsername())
+        .setParameter("uname", user.getUsername())
         .setParameter("pwd", user.getPassword())
         .uniqueResult();
         ss.close();

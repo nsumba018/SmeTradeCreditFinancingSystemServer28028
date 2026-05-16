@@ -8,6 +8,7 @@ package rw.rab.controller;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import rw.rab.dao.HibernateUtil;
 import rw.rab.service.implementation.FundingServiceImpl;
 import rw.rab.service.implementation.InvestorServiceImpl;
 import rw.rab.service.implementation.InvoiceServiceImpl;
@@ -48,6 +49,8 @@ public class Server {
             registry.rebind("investor", server.investorServiceImpl);
             registry.rebind("funding",  server.fundingServiveImpl);
             System.out.println("Server is running on port 3000");
+            
+             HibernateUtil.getSessionFactory();
             
         }catch(Exception ex){
             ex.printStackTrace();
